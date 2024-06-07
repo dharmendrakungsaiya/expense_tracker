@@ -1,11 +1,11 @@
-
-
 import React, { useState, useEffect } from 'react';
 import AddExpenseForm from './Components/AddExpenseForm/AddExpenseForm';
 import AddIncomeForm from './Components/AddIncomeForm/AddIncomeForm';
 import ExpenseList from './Components/ExpenseList/ExpenseList';
 import ExpenseSummary from './Components/ExpenseSummary/ExpenseSummary';
 import ExpenseTrends from './Components/ExpenseTrends/ExpenseTrends';
+import './App.css';
+import Tracker from './Components/Design/Tracker';
 
 function App() {
   const [walletBalance, setWalletBalance] = useState(5000);
@@ -48,14 +48,15 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <h1>Expense Tracker</h1>
+    <div>
+      {/* <h1 className='heading'>Expense Tracker</h1>
       <p>Wallet Balance: ${walletBalance}</p>
       <AddIncomeForm addIncome={addIncome} />
       <AddExpenseForm addExpense={addExpense} />
       <ExpenseList expenses={expenses} editExpense={editExpense} deleteExpense={deleteExpense} />
       <ExpenseSummary expenses={expenses} />
-      <ExpenseTrends expenses={expenses} />
+      <ExpenseTrends expenses={expenses} /> */}
+      <Tracker/>
     </div>
   );
 }

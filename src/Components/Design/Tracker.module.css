@@ -1,0 +1,41 @@
+.wrapper {
+    background-color: #3B3B3B;
+    color: white;
+}
+
+.container {
+    height: 269px;
+    top: 94px;
+    left: 32px;
+    gap: 0px;
+    border-radius: 10px 0px 0px 0px;
+    opacity: 0px;
+    background-color: #9B9B9B;
+}
+
+.header {
+    width: 760px;
+    height: 181px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.wallet {
+    width: 355px;
+    height: 181px;
+    border-radius: 15px;
+    opacity: 0px;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.wallet button {
+ border-radius: 15px;
+ font-size: small;
+}

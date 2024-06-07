@@ -16,6 +16,7 @@ function AddExpenseForm({ addExpense }) {
   };
 
   return (
+    <div className='form-container'>
     <form onSubmit={handleSubmit}>
       <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" required />
       <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Amount" required />
@@ -23,6 +24,7 @@ function AddExpenseForm({ addExpense }) {
       <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
       <button type="submit">Add Expense</button>
     </form>
+    </div>
   );
 }
 
