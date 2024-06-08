@@ -16,12 +16,9 @@ function ExpenseSummary({ expenses }) {
 
   return (
     <div>
-      <h2>Expense Summary</h2>
-      <PieChart width={400} height={400}>
+      <PieChart width={199} height={199}>
         <Pie
           data={data}
-          cx={200}
-          cy={200}
           labelLine={false}
           outerRadius={80}
           fill="#8884d8"
