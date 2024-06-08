@@ -3,7 +3,7 @@
     color: white;
 }
 
-.container {
+/* .container {
     height: 269px;
     top: 94px;
     left: 32px;
@@ -11,17 +11,18 @@
     border-radius: 10px 0px 0px 0px;
     opacity: 0px;
     background-color: #9B9B9B;
-}
+} */
 
 .header {
-    width: 760px;
+    /* width: 1199px; */
     height: 181px;
     border-radius: 15px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     gap: 20px;
     padding: 40px;
+    background-color: #9B9B9B;
 }
 
 .wallet {

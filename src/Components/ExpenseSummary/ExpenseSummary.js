@@ -20,7 +20,7 @@ function ExpenseSummary({ expenses }) {
         <Pie
           data={data}
           labelLine={false}
-          outerRadius={80}
+          outerRadius={70}
           fill="#8884d8"
           dataKey="value"
         >

@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from '../ExpenseList/Expense.module.css';
+import ExpenseTrends from '../ExpenseTrends/ExpenseTrends';
 
 const ExpenseList = ({ expenses, onEdit, onDelete }) => {
-  // Sort expenses by amount in descending order and get the top 3 expenses
-  const topExpenses = [...expenses].sort((a, b) => b.amount - a.amount).slice(0, 3);
 
   return (
     <div className={styles.wrapper}>
@@ -28,21 +27,7 @@ const ExpenseList = ({ expenses, onEdit, onDelete }) => {
       </div>
       <div className={styles.topExpenses}>
         <h2>Top Expenses</h2>
-        {topExpenses.length === 0 ? (
-          <p>No expenses available.</p>
-        ) : (
-          <ul>
-            {topExpenses.map((expense) => (
-              <li key={expense.id} className={styles.expenseItem}>
-                <span>{expense.title} - {expense.category} - ${expense.amount} - {new Date(expense.date).toLocaleDateString()}</span>
-                <div className={styles.actions}>
-                  <button onClick={() => onEdit(expense)}>Edit</button>
-                  <button onClick={() => onDelete(expense.id)}>Delete</button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
+        <ExpenseTrends expenses={expenses} />
       </div>
     </div>
   </div>

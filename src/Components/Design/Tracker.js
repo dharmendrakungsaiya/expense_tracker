@@ -39,7 +39,7 @@ const Tracker = ({ walletBalance, addExpense, addIncome, expenses }) => {
           } else if (modalType === 'expense') {
               const expense = { id: new Date().getTime(), title, amount: value, category, date };
               if (editingIndex !== null) {
-                  // Edit existing expense
+
               } else {
                   addExpense(expense);
               }
@@ -49,9 +49,11 @@ const Tracker = ({ walletBalance, addExpense, addIncome, expenses }) => {
   };
 
   return (
-      <div className={styles.wrapper}>
-          <h1>Expenses Tracker</h1>
-          <div className={styles.container}>
+    <div className={styles.wrapper}>
+    <h1>Expenses Tracker</h1>
+      <div>
+          
+          {/* <div className={styles.container}> */}
               <div className={styles.header}>
                   <div className={styles.wallet}>
                       <h3>Wallet Balance: {walletBalance}</h3>
@@ -72,10 +74,13 @@ const Tracker = ({ walletBalance, addExpense, addIncome, expenses }) => {
                           + Add Expenses
                       </button>
                   </div>
-                  <div className={styles.expenseSummary}>
-                  <ExpenseSummary expenses={expenses} />
+              
+                  <div>
+<ExpenseSummary expenses={expenses}  />
+</div>
+              
               </div>
-              </div>
+          {/* </div> */}
           </div>
           {isModalOpen && (
               <div className={styles.modal}>
