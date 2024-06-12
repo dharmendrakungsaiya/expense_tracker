@@ -1,8 +1,7 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 
 const ExpenseTrends = ({ expenses }) => {
-  // Transform expenses data into format required by Recharts
   const chartData = expenses.map(expense => ({
     title: expense.title,
     amount: expense.amount
@@ -11,20 +10,29 @@ const ExpenseTrends = ({ expenses }) => {
   return (
     <div style={{ marginTop: '20px' }}>
       <BarChart
-        width={600}
+        width={400}
         height={300}
         data={chartData}
-        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+        layout="vertical"
+        margin={{
+          top: 20,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
+        barSize={20}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="title" />
-        <YAxis />
+        <XAxis type="number" />
+        <YAxis type="category" dataKey="title" />
         <Tooltip />
         <Legend />
-        <Bar dataKey="amount" fill="#8884d8" />
+        <Bar dataKey="amount" name="Expense Amount" fill="#8884d8" />
       </BarChart>
+
     </div>
   );
 };
 
 export default ExpenseTrends;
+
+

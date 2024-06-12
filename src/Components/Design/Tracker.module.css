@@ -3,30 +3,29 @@
     color: white;
 }
 
-/* .container {
-    height: 269px;
-    top: 94px;
-    left: 32px;
-    gap: 0px;
-    border-radius: 10px 0px 0px 0px;
-    opacity: 0px;
-    background-color: #9B9B9B;
-} */
+.wallet h3 {
+    font-family: Ubuntu;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 34.47px;
+    text-align: center;
+
+}
 
 .header {
-    /* width: 1199px; */
-    height: 181px;
+    height: 190px;
     border-radius: 15px;
-    display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    padding: 40px;
     background-color: #9B9B9B;
+    display: flex;
+    gap: 20px;
+    border-radius: 5px;
+    padding: 20px;
 }
 
 .wallet {
-    width: 355px;
+    width: 350px;
     height: 181px;
     border-radius: 15px;
     opacity: 0px;
@@ -36,37 +35,132 @@
     text-align: center;
 }
 
-.wallet button {
- border-radius: 15px;
- font-size: small;
-}
 
 .modal {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    top: 50%;
+    left: 50%;
+    width: 538px;
+    height: 335px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px 0px 0px 0px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px; 
+    opacity: 1;
+    z-index: 1000;
 }
 
 .modalContent {
-    background: white;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.modalContent input {
+    margin-bottom: 10px;
+    padding: 10px;
     border-radius: 5px;
-    width: 300px;
-    text-align: center;
+    border: 1px solid #ccc;
+    width: 100%; /* Full width for input fields */
+    box-sizing: border-box; /* Ensures padding and border are included in width */
 }
 
 .modalActions {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    width: 100%;
+    padding-top: 10px;
 }
 
-.expenseSummary {
-    
+.modalActions button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 48%; /* Ensures buttons are equally sized and spaced */
+    box-sizing: border-box; /* Ensures padding and border are included in width */
+}
+
+
+
+.modalActions button:hover {
+    opacity: 0.8;
+}
+
+.modalHeader h3 {
+    color: black;
+}
+
+.btn1 {
+    width: 167.65px;
+    height: 38px;
+    top: 245px;
+    left: 183.88px;
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 15px;
+    font-size: 16px;
+    color: #FFFFFF;
+    background: linear-gradient(#B5DC52, #89E148);
+
+}
+
+.btn2 {
+    width: 167.65px;
+    height: 38px;
+    top: 245px;
+    left: 183.88px;
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 15px;
+    font-size: 16px;
+    color: #FFFFFF;
+    background: linear-gradient(#FF9595, #FF4747, #FF3838);
+
+}
+
+.addIncomeButton {
+    background: linear-gradient(#D9D9D9, #D9D9D9, #F4BB4A);
+    color: white;
+    width: 145px;
+    height: 51px;
+    top: 378px;
+    left: 630px;
+    gap: 0px;
+    border-radius: 15px 0px 0px 0px;
+    opacity: 0px;
+
+}
+
+.addExpenseButton {
+    background: linear-gradient(#D9D9D9, #D9D9D9, #F4BB4A);
+    color: white;
+    width: 223px;
+    height: 51px;
+    top: 493px;
+    left: 401px;
+    gap: 0px;
+    border-radius: 15px 0px 0px 0px;
+    opacity: 0px;
+
+}
+
+.cancelButton {
+    width: 112px;
+    height: 51px;
+    top: 494px;
+    left: 640px;
+    gap: 0px;
+    border-radius: 15px 0px 0px 0px;
+    opacity: 0px;
+    color: black;
+    background: linear-gradient(#D9D9D9, #D9D9D9, #E3E3E3);
 }

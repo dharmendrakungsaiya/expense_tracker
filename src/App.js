@@ -2,9 +2,19 @@ import React, { useState, useEffect } from 'react';
 import Tracker from './Components/Design/Tracker';
 import ExpenseList from './Components/ExpenseList/ExpenseList';
 
+
 function App() {
-  const [walletBalance, setWalletBalance] = useState(5000);
-  const [expenses, setExpenses] = useState([]);
+  const [walletBalance, setWalletBalance] = useState(
+    localStorage.getItem("walletBalance")
+      ? JSON.parse(localStorage.getItem("walletBalance"))
+      : 5000
+  );
+
+  const [expenses, setExpenses] = useState(
+    localStorage.getItem("expenses")?.length > 0
+      ? JSON.parse(localStorage.getItem("expenses"))
+      : []
+  );
 
   useEffect(() => {
     const savedBalance = localStorage.getItem('walletBalance');
@@ -58,5 +68,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

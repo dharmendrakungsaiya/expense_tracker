@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
+import styles from '../ExpenseSummary/Expense.module.css';
 
 function ExpenseSummary({ expenses }) {
   const data = expenses.reduce((acc, expense) => {
@@ -15,11 +17,13 @@ function ExpenseSummary({ expenses }) {
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
   return (
-    <div>
+    <div className={styles.chartContainer}>
       <PieChart width={199} height={199}>
         <Pie
           data={data}
           labelLine={false}
+          cx="50%"
+          cy="50%"
           outerRadius={70}
           fill="#8884d8"
           dataKey="value"
@@ -29,10 +33,11 @@ function ExpenseSummary({ expenses }) {
           ))}
         </Pie>
         <Tooltip />
-        <Legend />
+        <Legend layout="horizontal" verticalAlign="bottom" align="center" />
       </PieChart>
     </div>
   );
 }
 
 export default ExpenseSummary;
+
