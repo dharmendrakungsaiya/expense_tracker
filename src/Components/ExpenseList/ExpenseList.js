@@ -4,7 +4,7 @@ import ExpenseTrends from '../ExpenseTrends/ExpenseTrends';
 import LeftArrow from '../../leftarrow.png';
 import RightArrow from '../../rightarrow.png';
 import Rectangle from '../../Rectangle.png';
-
+import Header from '../Heading/Heading';
 
 
 const ExpenseList = ({ expenses, onEdit, onDelete }) => {
@@ -43,58 +43,57 @@ const ExpenseList = ({ expenses, onEdit, onDelete }) => {
 
   return (
     <>
+      <Header />
       <div className={styles.listsContainer}>
-        <div>
-          <div className={styles.expenseList}>
-            {expenses.length === 0 ? (
-              <p>No expenses added yet.</p>
-            ) : (
-              <ul>
-                {currentExpenses.map((expense) => (
-                  <li key={expense.id} className={styles.expenseItem}>
-                    <div>
-                      <div>{expense.title}</div>
-                      <div className={styles.date}>
-                        {new Date(expense.date).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                        })}
-                      </div>
+        <div className={styles.expenseList}>
+          {expenses.length === 0 ? (
+            <p>No expenses added yet.</p>
+          ) : (
+            <ul>
+              {currentExpenses.map((expense) => (
+                <li key={expense.id} className={styles.expenseItem}>
+                  <div>
+                    <div>{expense.title}</div>
+                    <div className={styles.date}>
+                      {new Date(expense.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      })}
                     </div>
-                    <div className={styles.actions}>
-                      <span className={styles.amount}>₹{expense.amount}</span>
-                      <button onClick={() => openEditModal(expense)}>Edit</button>
-                      <button onClick={() => onDelete(expense.id)}>Delete</button>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            )}
+                  </div>
+                  <div className={styles.actions}>
+                    <span className={styles.amount}>₹{expense.amount}</span>
+                    <button onClick={() => openEditModal(expense)}>Edit</button>
+                    <button onClick={() => onDelete(expense.id)}>Delete</button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
 
 
-            {totalPages > 1 && (
-              <div className={styles.pagination}>
-                <img
-                  src={LeftArrow}
-                  alt="Left Arrow"
-                  className={`${styles.arrow} ${styles.leftArrow}`}
-                  onClick={() => handlePageChange(currentPage - 1)}
-                />
-                <div className={styles.rectangleWrapper}>
-                  <img src={Rectangle} alt="Rectangle" className={styles.rectangle} />
-                  <span className={styles.pageNumber}>{currentPage}</span>
-                </div>
-                <img
-                  src={RightArrow}
-                  alt="Right Arrow"
-                  className={`${styles.arrow} ${styles.rightArrow}`}
-                  onClick={() => handlePageChange(currentPage + 1)}
-                />
+          {totalPages > 1 && (
+            <div className={styles.pagination}>
+              <img
+                src={LeftArrow}
+                alt="Left Arrow"
+                className={`${styles.arrow} ${styles.leftArrow}`}
+                onClick={() => handlePageChange(currentPage - 1)}
+              />
+              <div className={styles.rectangleWrapper}>
+                <img src={Rectangle} alt="Rectangle" className={styles.rectangle} />
+                <span className={styles.pageNumber}>{currentPage}</span>
               </div>
-            )}
+              <img
+                src={RightArrow}
+                alt="Right Arrow"
+                className={`${styles.arrow} ${styles.rightArrow}`}
+                onClick={() => handlePageChange(currentPage + 1)}
+              />
+            </div>
+          )}
 
-          </div>
         </div>
         <div className={styles.topExpenses}>
           <ExpenseTrends expenses={expenses} />
@@ -104,7 +103,6 @@ const ExpenseList = ({ expenses, onEdit, onDelete }) => {
       {isEditModalOpen && (
         <div className={styles.modal}>
           <div className={styles.modalContent}>
-            <h2>Edit Expense</h2>
             <form onSubmit={(e) => { e.preventDefault(); handleEdit(); }}>
               <input
                 type="text"
@@ -113,7 +111,7 @@ const ExpenseList = ({ expenses, onEdit, onDelete }) => {
                 onChange={(e) => setEditedExpense({ ...editedExpense, title: e.target.value })}
               />
               <input
-                type="number"
+                type="text"
                 value={editedExpense.amount}
                 placeholder="Price"
                 onChange={(e) => setEditedExpense({ ...editedExpense, amount: parseFloat(e.target.value) })}

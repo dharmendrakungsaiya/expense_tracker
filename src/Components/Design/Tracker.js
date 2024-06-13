@@ -11,11 +11,7 @@ const Tracker = ({ walletBalance, addExpense, addIncome, expenses }) => {
     const [date, setDate] = useState('');
     const [editingIndex, setEditingIndex] = useState(null);
 
-    const categories = [
-        "Food",
-        "Entertainment",
-        "Travel",
-    ];
+    const categories = ["Food","Entertainment","Travel"];
 
 
 

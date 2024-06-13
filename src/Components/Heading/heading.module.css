@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    background-color: #3B3B3B;
+}
+
+.heading1 {
+    top: 399px;
+    left: 32px;
+    gap: 0px;
+    opacity: 0px;
+    margin-left: 2%;
+    font-family: Ubuntu;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 32.17px;
+    color: #FFFFFF;
+}
+
+.heading2 {
+    top: 399px;
+    left: 800px;
+    gap: 0px;
+    opacity: 0px;
+    margin-left: 35%;
+    font-family: Ubuntu;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 32.17px;
+    color: #FFFFFF;
+}

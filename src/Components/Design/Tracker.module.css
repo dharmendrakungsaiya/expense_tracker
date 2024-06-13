@@ -69,8 +69,8 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 100%; /* Full width for input fields */
-    box-sizing: border-box; /* Ensures padding and border are included in width */
+    width: 100%; 
+    box-sizing: border-box;
 }
 
 .modalActions {
@@ -85,8 +85,8 @@
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    width: 48%; /* Ensures buttons are equally sized and spaced */
-    box-sizing: border-box; /* Ensures padding and border are included in width */
+    width: 48%; 
+    box-sizing: border-box;
 }
 
 
