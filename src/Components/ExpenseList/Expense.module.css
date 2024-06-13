@@ -40,48 +40,7 @@
     border-bottom: 1px solid #e0e0e0;
   }
 
-  /* .expenseList {
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #F8F8F8;
-    width: 738.33px;
-    height: 330px;
-    top: 440.97px;
-    left: 32px;
-    gap: 0px;
-    border-radius: 15px;
-    opacity: 0px;
-  }
   
-  .expenseItem {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  
-  .expenseItem > div {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .amount {
-    margin-right: 10px;
-  }
-  
-  .date {
-    font-size: 0.9em;
-    color: #888;
-  } */
-  
-
 .actions {
     display: flex;
     gap: 10px;
@@ -207,7 +166,7 @@
 .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    align-items: center;
   }
   
   .pageButton {
@@ -226,4 +185,40 @@
   .pageButton.active {
     background-color: #007bff;
     color: white;
+  }
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .arrow {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .rectangleWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+    margin: 20px;
+  }
+  
+  .rectangle {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .pageNumber {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    
   }

@@ -11,6 +11,14 @@ const Tracker = ({ walletBalance, addExpense, addIncome, expenses }) => {
     const [date, setDate] = useState('');
     const [editingIndex, setEditingIndex] = useState(null);
 
+    const categories = [
+        "Food",
+        "Entertainment",
+        "Travel",
+    ];
+
+
+
     const handleAddIncomeClick = () => {
         setModalType('income');
         setIsModalOpen(true);
@@ -39,7 +47,7 @@ const Tracker = ({ walletBalance, addExpense, addIncome, expenses }) => {
             } else if (modalType === 'expense') {
                 const expense = { id: new Date().getTime(), title, amount: value, category, date };
                 if (editingIndex !== null) {
-
+                    // Handle edit logic here
                 } else {
                     addExpense(expense);
                 }
@@ -52,8 +60,6 @@ const Tracker = ({ walletBalance, addExpense, addIncome, expenses }) => {
         <div className={styles.wrapper}>
             <h1>Expenses Tracker</h1>
             <div>
-
-                {/* <div className={styles.container}> */}
                 <div className={styles.header}>
                     <div className={styles.wallet}>
                         <h3>Wallet Balance: {walletBalance}</h3>
@@ -64,7 +70,6 @@ const Tracker = ({ walletBalance, addExpense, addIncome, expenses }) => {
                             + Add Income
                         </button>
                     </div>
-
                     <div className={styles.wallet}>
                         <h3>Expenses: {expenses.reduce((total, expense) => total + expense.amount, 0)}</h3>
                         <button
@@ -74,16 +79,12 @@ const Tracker = ({ walletBalance, addExpense, addIncome, expenses }) => {
                             + Add Expenses
                         </button>
                     </div>
-
                     <div>
                         <ExpenseSummary expenses={expenses} />
                     </div>
-
                 </div>
-                {/* </div> */}
             </div>
             {isModalOpen && (
-
                 <div className={styles.modal}>
                     <div className={styles.modalContent}>
                         <h2>Add {modalType === 'income' ? 'Income' : 'Expense'}</h2>
@@ -108,10 +109,16 @@ const Tracker = ({ walletBalance, addExpense, addIncome, expenses }) => {
                                     />
                                     <input
                                         type="text"
+                                        list="categories"
                                         value={category}
                                         onChange={(e) => setCategory(e.target.value)}
                                         placeholder="Select category"
                                     />
+                                    <datalist id="categories">
+                                        {categories.map((category, index) => (
+                                            <option key={index} value={category} />
+                                        ))}
+                                    </datalist>
                                     <input
                                         type="date"
                                         value={date}
@@ -120,7 +127,7 @@ const Tracker = ({ walletBalance, addExpense, addIncome, expenses }) => {
                                 </>
                             )}
                             <input
-                                type="number"
+                                type="text"
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
                                 placeholder={`${modalType === 'income' ? 'Income' : 'Expense'} amount`}
@@ -139,13 +146,8 @@ const Tracker = ({ walletBalance, addExpense, addIncome, expenses }) => {
                         </form>
                     </div>
                 </div>
-
-
             )}
-
-
         </div>
     );
 };
-
 export default Tracker;
