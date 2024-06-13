@@ -2,6 +2,7 @@
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 import styles from '../ExpenseSummary/Expense.module.css';
+import CustomLegend from './CustomLegend';
 
 function ExpenseSummary({ expenses }) {
   const data = expenses.reduce((acc, expense) => {
@@ -18,24 +19,24 @@ function ExpenseSummary({ expenses }) {
 
   return (
     <div className={styles.chartContainer}>
-      <PieChart width={199} height={199}>
-        <Pie
-          data={data}
-          labelLine={false}
-          cx="50%"
-          cy="50%"
-          outerRadius={70}
-          fill="#8884d8"
-          dataKey="value"
-        >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-        <Tooltip />
-        <Legend layout="horizontal" verticalAlign="bottom" align="center" />
-      </PieChart>
-    </div>
+    <PieChart width={199} height={199}>
+      <Pie
+        data={data}
+        labelLine={false}
+        cx="50%"
+        cy="50%"
+        outerRadius={70}
+        fill="#8884d8"
+        dataKey="value"
+      >
+        {data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+        ))}
+      </Pie>
+      <Tooltip />
+      <Legend content={<CustomLegend />} layout="horizontal" verticalAlign="bottom" align="center" />
+    </PieChart>
+  </div>
   );
 }
 
